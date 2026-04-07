@@ -7,10 +7,10 @@
 :root {
   /* -----------------------------------------------------------------------
      BORNES VIEWPORT — Reference pour toutes les valeurs fluides
-     Min : 400px (25rem)  |  Max : 1200px (75rem)
+     Min : 320px (20rem)  |  Max : 1300px (81.25rem)
      ----------------------------------------------------------------------- */
-  --fluid-min: 25;   /* rem, sans unite pour usage dans les commentaires */
-  --fluid-max: 81.25;   /* rem, sans unite pour usage dans les commentaires */
+  --fluid-min: 20;      /* rem, sans unite — 320px */
+  --fluid-max: 81.25;   /* rem, sans unite — 1300px */
 
   /* -----------------------------------------------------------------------
      COULEURS — Fonds
@@ -49,18 +49,19 @@
 
   /* -----------------------------------------------------------------------
      TYPOGRAPHIE — Echelle fluide
-     Formule : clamp(min, interpolation lineaire 400→1200px, max)
+     Formule : clamp(min, interpolation lineaire 320→1300px, max)
+     preferred = minVal - diff*(320/980) + diff/61.25 * 100vw
      ----------------------------------------------------------------------- */
   --text-xs:   var(--p-font-size-13);
   --text-sm:   var(--p-font-size-14);
   --text-base: var(--p-font-size-16);
-  --text-md:   clamp(1rem,      0.95rem  + 0.25vw, 1.125rem);  /* 16 → 18 */
-  --text-lg:   clamp(1.125rem,  1rem     + 0.5vw,  1.25rem);   /* 18 → 20 */
-  --text-xl:   clamp(1.25rem,   1.05rem  + 1vw,    1.5rem);    /* 20 → 24 */
-  --text-2xl:  clamp(1.5rem,    1.1rem   + 2vw,    2rem);      /* 24 → 32 */
-  --text-3xl:  clamp(2rem,      1.4rem   + 3vw,    2.5rem);    /* 32 → 40 */
-  --text-4xl:  clamp(2.5rem,    1.5rem   + 4vw,    3rem);      /* 40 → 48 */
-  --text-5xl:  clamp(2.75rem,   1.25rem  + 6vw,    4rem);      /* 44 → 64 */
+  --text-md:   clamp(1rem,      0.96rem  + 0.20vw, 1.125rem);  /* 16 → 18 */
+  --text-lg:   clamp(1.125rem,  1.08rem  + 0.20vw, 1.25rem);   /* 18 → 20 */
+  --text-xl:   clamp(1.25rem,   1.17rem  + 0.41vw, 1.5rem);    /* 20 → 24 */
+  --text-2xl:  clamp(1.5rem,    1.34rem  + 0.82vw, 2rem);      /* 24 → 32 */
+  --text-3xl:  clamp(2rem,      1.84rem  + 0.82vw, 2.5rem);    /* 32 → 40 */
+  --text-4xl:  clamp(2.5rem,    2.34rem  + 0.82vw, 3rem);      /* 40 → 48 */
+  --text-5xl:  clamp(2.75rem,   2.34rem  + 2.04vw, 4rem);      /* 44 → 64 */
 
   /* -----------------------------------------------------------------------
      TYPOGRAPHIE — Familles semantiques
@@ -162,15 +163,15 @@
   /* -----------------------------------------------------------------------
      ESPACEMENTS — Section (fluides, padding vertical)
      ----------------------------------------------------------------------- */
-  --space-section:    clamp(3rem,   2rem   + 4vw, 6rem);   /* 48 → 96px */
-  --space-section-lg: clamp(4rem,   2.5rem + 6vw, 8rem);   /* 64 → 128px */
+  --space-section:    clamp(3rem,   2.02rem + 4.9vw,  6rem);   /* 48 → 96px  | 320→1300 */
+  --space-section-lg: clamp(4rem,   2.69rem + 6.53vw, 8rem);   /* 64 → 128px | 320→1300 */
 
   /* -----------------------------------------------------------------------
      ESPACEMENTS — Gaps (grilles et groupes)
      ----------------------------------------------------------------------- */
-  --space-gap-sm: var(--p-space-4);                           /* 16px statique */
-  --space-gap-md: clamp(1.5rem, 1rem    + 2vw, 2.5rem);     /* 24 → 40px */
-  --space-gap-lg: clamp(2rem,   1.25rem + 3vw, 3rem);        /* 32 → 48px */
+  --space-gap-sm: var(--p-space-4);                                   /* 16px statique */
+  --space-gap-md: clamp(1.5rem, 1.17rem + 1.63vw, 2.5rem);           /* 24 → 40px | 320→1300 */
+  --space-gap-lg: clamp(2rem,   1.67rem + 1.63vw, 3rem);             /* 32 → 48px | 320→1300 */
 
   /* -----------------------------------------------------------------------
      LAYOUT
@@ -178,7 +179,7 @@
   --layout-max:     81.25rem;                            /* 1300px */
   --layout-content: 42rem;                               /*  672px */
   --layout-narrow:  32rem;                               /*  512px */
-  --layout-gutter:  clamp(1rem, 0.5rem + 2vw, 2rem);    /* 16 → 32px */
+  --layout-gutter:  clamp(1rem, 0.67rem + 1.63vw, 2rem);  /* 16 → 32px | 320→1300 */
 
   /* -----------------------------------------------------------------------
      SURFACES — Rayons
