@@ -1,0 +1,200 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+
+    <div class="contact-header">
+      <p class="contact-label">Nous contacter</p>
+      <h2 class="contact-title" id="contact-title">Une question ?<br />On vous répond.</h2>
+      <p class="contact-lead">
+        Commande, devis, conseil sur les essences ou simple curiosité —
+        écrivez-nous, nous répondons sous 24 h.
+      </p>
+    </div>
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+      novalidate
+    >
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label" for="contact-name">Nom</label>
+          <input
+            class="form-input"
+            type="text"
+            id="contact-name"
+            name="name"
+            autocomplete="name"
+            required
+            placeholder="Votre nom"
+          />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="contact-email">Email</label>
+          <input
+            class="form-input"
+            type="email"
+            id="contact-email"
+            name="email"
+            autocomplete="email"
+            required
+            placeholder="votre@email.com"
+          />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="contact-subject">Sujet</label>
+        <input
+          class="form-input"
+          type="text"
+          id="contact-subject"
+          name="subject"
+          placeholder="En quoi pouvons-nous vous aider ?"
+        />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="contact-message">Message</label>
+        <textarea
+          class="form-input form-textarea"
+          id="contact-message"
+          name="message"
+          rows="5"
+          required
+          placeholder="Votre message…"
+        ></textarea>
+      </div>
+
+      <div class="form-footer">
+        <Button type="submit">Envoyer le message</Button>
+        <p class="form-note">Réponse sous 24 h — Aucun démarchage commercial.</p>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding-block: var(--space-section-lg);
+    background-color: var(--color-bg-subtle);
+  }
+
+  .contact-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-gap-lg);
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Header */
+  .contact-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+    letter-spacing: var(--label-tracking);
+    text-transform: var(--label-transform);
+    color: var(--color-accent-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .contact-title {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    line-height: var(--h2-leading);
+    font-weight: var(--h2-weight);
+    letter-spacing: var(--h2-tracking);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .contact-lead {
+    font-size: var(--lead-size);
+    line-height: var(--lead-leading);
+    color: var(--color-text-secondary);
+    max-width: 38ch;
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-md);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-stack-md);
+  }
+
+  @media (min-width: 480px) {
+    .form-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-xs);
+  }
+
+  .form-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+    letter-spacing: var(--label-tracking);
+    text-transform: var(--label-transform);
+    color: var(--color-text-secondary);
+  }
+
+  .form-input {
+    font-size: var(--text-base);
+    line-height: var(--p-leading-normal);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-inline-sm) var(--space-inline-md);
+    transition: var(--transition-colors), border-color var(--duration-normal) var(--ease-default);
+    width: 100%;
+    outline: none;
+  }
+
+  .form-input::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .form-input:focus {
+    border-color: var(--color-accent);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 8rem;
+  }
+
+  .form-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm);
+  }
+
+  .form-note {
+    font-size: var(--caption-size);
+    color: var(--color-text-tertiary);
+    letter-spacing: var(--caption-tracking);
+  }
+</style>

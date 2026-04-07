@@ -1,0 +1,111 @@
+---
+const values = [
+  { title: 'Sourcing local', description: 'Des forêts françaises gérées durablement, en direct avec les exploitants.' },
+  { title: 'Séchage naturel', description: "Un bois correctement séché, stable et prêt à l'usage sans traitement chimique." },
+  { title: 'Zéro additif', description: 'Aucun produit ajouté. La qualité vient du bois lui-même, pas d\'un traitement.' },
+];
+---
+
+<section class="about" id="nous-sommes" aria-labelledby="about-title">
+  <div class="about-inner">
+
+    <div class="about-header">
+      <p class="about-label">Qui nous sommes</p>
+      <h2 class="about-title" id="about-title">
+        Une conviction simple.<br />Le bois bien traité est un matériau noble.
+      </h2>
+      <p class="about-lead">
+        Neandertal est né du refus du bois banal. Nous travaillons directement
+        avec des exploitants forestiers locaux pour vous offrir des produits
+        dont la qualité est constante, traçable et sans compromis.
+      </p>
+    </div>
+
+    <div class="about-values">
+      {values.map(value => (
+        <div class="about-value">
+          <h3 class="about-value-title">{value.title}</h3>
+          <p class="about-value-description">{value.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-block: var(--space-section-lg);
+    background-color: var(--color-bg-subtle);
+  }
+
+  .about-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-gap-lg);
+  }
+
+  @media (min-width: 768px) {
+    .about-inner {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  /* Header */
+  .about-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+    letter-spacing: var(--label-tracking);
+    text-transform: var(--label-transform);
+    color: var(--color-accent-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .about-title {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    line-height: var(--h2-leading);
+    font-weight: var(--h2-weight);
+    letter-spacing: var(--h2-tracking);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .about-lead {
+    font-size: var(--lead-size);
+    line-height: var(--lead-leading);
+    color: var(--color-text-secondary);
+    max-width: 44ch;
+  }
+
+  /* Values */
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-gap-md);
+  }
+
+  .about-value {
+    padding-block: var(--space-stack-md);
+    border-top: var(--border-subtle);
+  }
+
+  .about-value-title {
+    font-family: var(--font-heading);
+    font-size: var(--h4-size);
+    line-height: var(--h4-leading);
+    font-weight: var(--h4-weight);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-xs);
+  }
+
+  .about-value-description {
+    font-size: var(--text-base);
+    line-height: var(--p-leading-normal);
+    color: var(--color-text-secondary);
+  }
+</style>

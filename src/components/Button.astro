@@ -1,0 +1,80 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md';
+  href?: string;
+  type?: 'button' | 'submit';
+  disabled?: boolean;
+}
+const { variant = 'primary', size = 'md', href, type = 'button', disabled = false } = Astro.props;
+---
+
+{href ? (
+  <a class="btn" data-variant={variant} data-size={size} href={href}>
+    <slot />
+  </a>
+) : (
+  <button class="btn" data-variant={variant} data-size={size} type={type} disabled={disabled}>
+    <slot />
+  </button>
+)}
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-inline-xs);
+    font-size: var(--button-size);
+    font-weight: var(--button-weight);
+    letter-spacing: var(--button-tracking);
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    border: var(--border-width) solid transparent;
+    transition: var(--transition-colors), var(--transition-shadow);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn[data-size="md"] {
+    padding: var(--space-inline-sm) var(--space-inline-lg);
+  }
+  .btn[data-size="sm"] {
+    padding: var(--space-inline-xs) var(--space-inline-md);
+    font-size: var(--text-xs);
+  }
+
+  .btn[data-variant="primary"] {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+    border-color: var(--color-accent);
+  }
+  .btn[data-variant="primary"]:hover:not(:disabled) {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn[data-variant="secondary"] {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+  .btn[data-variant="secondary"]:hover:not(:disabled) {
+    background-color: var(--color-bg-subtle);
+    border-color: var(--color-border);
+  }
+
+  .btn[data-variant="ghost"] {
+    background-color: transparent;
+    color: var(--color-accent-text);
+  }
+  .btn[data-variant="ghost"]:hover:not(:disabled) {
+    background-color: var(--color-bg-muted);
+  }
+
+  .btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+</style>

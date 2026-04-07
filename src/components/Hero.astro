@@ -1,0 +1,118 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Bois naturel — Qualité constante</p>
+      <h1 class="hero-title" id="hero-title">Le bois<br />comme on l'aime.</h1>
+      <p class="hero-lead">
+        Neandertal sélectionne, prépare et livre des bois d'allumage,
+        de grillage et de paillage issus de forêts gérées durablement.
+        Rien de superflu. Tout ce qu'il faut.
+      </p>
+      <div class="hero-actions">
+        <Button href="#allume-feu">Découvrir nos produits</Button>
+        <Button href="#contact" variant="secondary">Nous contacter</Button>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-image-placeholder">
+        <svg class="hero-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8 C20 16 12 28 16 40 C20 52 32 56 32 56 C32 56 44 52 48 40 C52 28 44 16 32 8Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M32 24 C26 30 24 36 26 42 C28 48 32 50 32 50 C32 50 36 48 38 42 C40 36 38 30 32 24Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: var(--space-section-lg);
+    background-color: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-gap-lg);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Label */
+  .hero-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+    letter-spacing: var(--label-tracking);
+    text-transform: var(--label-transform);
+    color: var(--color-accent-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  /* Title */
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    line-height: var(--h1-leading);
+    font-weight: var(--h1-weight);
+    letter-spacing: var(--h1-tracking);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-lg);
+  }
+
+  /* Lead */
+  .hero-lead {
+    font-size: var(--lead-size);
+    line-height: var(--lead-leading);
+    color: var(--lead-color);
+    max-width: 38ch;
+    margin-bottom: var(--space-stack-lg);
+  }
+
+  /* Actions */
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm);
+  }
+
+  /* Visual */
+  .hero-visual {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero-visual { display: flex; justify-content: flex-end; }
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    max-width: 28rem;
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-bg-muted);
+    border-radius: var(--radius-xl);
+    border: var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-tertiary);
+  }
+
+  .hero-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+</style>

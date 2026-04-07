@@ -1,0 +1,167 @@
+---
+const nav = [
+  { label: 'Allume-feu',   href: '#allume-feu' },
+  { label: 'Grillage',     href: '#grillage' },
+  { label: 'Paillage',     href: '#paillage' },
+  { label: 'Qui sommes-nous', href: '#nous-sommes' },
+  { label: 'Contact',      href: '#contact' },
+];
+---
+
+<header class="header" id="top">
+  <div class="header-inner">
+    <a class="logo" href="/">Neandertal</a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav-list">
+        {nav.map(item => (
+          <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <ul class="nav-mobile-list">
+      {nav.map(item => (
+        <li><a class="nav-mobile-link" href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: var(--color-bg);
+    border-bottom: var(--border-subtle);
+  }
+
+  .header-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-gap-md);
+  }
+
+  /* Logo */
+  .logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--p-weight-normal);
+    letter-spacing: var(--p-tracking-tight);
+    color: var(--color-text);
+    flex-shrink: 0;
+  }
+
+  /* Desktop nav */
+  .nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .nav { display: block; }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-inline-lg);
+  }
+
+  .nav-link {
+    font-size: var(--text-sm);
+    font-weight: var(--p-weight-medium);
+    color: var(--color-text-secondary);
+    transition: var(--transition-colors);
+  }
+  .nav-link:hover {
+    color: var(--color-text);
+  }
+
+  /* Mobile toggle */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-inline-xs);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .nav-toggle { display: none; }
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: currentColor;
+    transition: var(--transition-transform);
+  }
+
+  /* Mobile nav */
+  .nav-mobile {
+    display: none;
+    border-top: var(--border-subtle);
+    background-color: var(--color-bg);
+  }
+  .nav-mobile.is-open {
+    display: block;
+  }
+
+  .nav-mobile-list {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    padding-block: var(--space-stack-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-xs);
+  }
+
+  .nav-mobile-link {
+    display: block;
+    padding-block: var(--space-stack-sm);
+    font-size: var(--text-base);
+    font-weight: var(--p-weight-medium);
+    color: var(--color-text-secondary);
+    transition: var(--transition-colors);
+  }
+  .nav-mobile-link:hover {
+    color: var(--color-text);
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement;
+  const mobileNav = document.getElementById('nav-mobile');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = mobileNav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    mobileNav?.setAttribute('aria-hidden', String(!isOpen));
+  });
+
+  // Close on link click
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>

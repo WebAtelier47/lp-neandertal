@@ -10,7 +10,7 @@
      Min : 400px (25rem)  |  Max : 1200px (75rem)
      ----------------------------------------------------------------------- */
   --fluid-min: 25;   /* rem, sans unite pour usage dans les commentaires */
-  --fluid-max: 75;   /* rem, sans unite pour usage dans les commentaires */
+  --fluid-max: 81.25;   /* rem, sans unite pour usage dans les commentaires */
 
   /* -----------------------------------------------------------------------
      COULEURS — Fonds
@@ -175,7 +175,7 @@
   /* -----------------------------------------------------------------------
      LAYOUT
      ----------------------------------------------------------------------- */
-  --layout-max:     75rem;                               /* 1200px */
+  --layout-max:     81.25rem;                            /* 1300px */
   --layout-content: 42rem;                               /*  672px */
   --layout-narrow:  32rem;                               /*  512px */
   --layout-gutter:  clamp(1rem, 0.5rem + 2vw, 2rem);    /* 16 → 32px */

@@ -1,0 +1,119 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { label: 'Allume-feu',     href: '#allume-feu' },
+  { label: 'Grillage',       href: '#grillage' },
+  { label: 'Paillage',       href: '#paillage' },
+  { label: 'Qui sommes-nous', href: '#nous-sommes' },
+  { label: 'Contact',        href: '#contact' },
+];
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">Neandertal</a>
+      <p class="footer-tagline">Le bois comme on l'aime.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <ul class="footer-nav-list">
+        {links.map(link => (
+          <li><a class="footer-nav-link" href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">&copy; {year} Neandertal. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-bg-muted);
+    border-top: var(--border-subtle);
+  }
+
+  .footer-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    padding-block: var(--space-section);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-gap-lg);
+  }
+
+  @media (min-width: 640px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  /* Brand */
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--p-weight-normal);
+    letter-spacing: var(--p-tracking-tight);
+    color: var(--color-text);
+    display: block;
+    margin-bottom: var(--space-stack-sm);
+  }
+
+  .footer-tagline {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  /* Nav */
+  .footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-sm);
+  }
+
+  @media (min-width: 480px) {
+    .footer-nav-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--space-inline-lg);
+    }
+  }
+
+  .footer-nav-link {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    transition: var(--transition-colors);
+  }
+  .footer-nav-link:hover {
+    color: var(--color-text);
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    border-top: var(--border-subtle);
+  }
+
+  .footer-bottom-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    padding-block: var(--space-stack-md);
+  }
+
+  .footer-copy {
+    font-size: var(--caption-size);
+    color: var(--color-text-tertiary);
+    letter-spacing: var(--caption-tracking);
+  }
+</style>

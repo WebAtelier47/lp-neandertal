@@ -1,0 +1,141 @@
+---
+const points = [
+  {
+    number: '01',
+    title: 'Sélection rigoureuse',
+    description: 'Chaque lot est contrôlé avant expédition. Taux d\'humidité, densité, homogénéité — rien n\'est laissé au hasard.',
+  },
+  {
+    number: '02',
+    title: 'Transformation propre',
+    description: 'Coupe, conditionnement et stockage réalisés sans produits chimiques. Le bois reste tel qu\'il doit être.',
+  },
+  {
+    number: '03',
+    title: 'Conditionnement pensé',
+    description: 'Des formats adaptés à chaque usage. Pratiques à stocker, faciles à utiliser, sans emballage superflu.',
+  },
+  {
+    number: '04',
+    title: 'Livraison soignée',
+    description: 'Un bois livré en bon état, bien rangé, prêt à l\'emploi. Parce que la qualité va jusqu\'au bout.',
+  },
+];
+---
+
+<section class="innovation" id="innovation" aria-labelledby="innovation-title">
+  <div class="innovation-inner">
+
+    <div class="innovation-header">
+      <p class="innovation-label">Notre approche</p>
+      <h2 class="innovation-title" id="innovation-title">
+        De la forêt à chez vous.<br />Sans détour.
+      </h2>
+      <p class="innovation-lead">
+        Nous repensons chaque étape du circuit du bois pour garantir
+        une qualité que vous pouvez voir, sentir et ressentir.
+      </p>
+    </div>
+
+    <div class="innovation-grid">
+      {points.map(point => (
+        <div class="innovation-point">
+          <span class="innovation-number" aria-hidden="true">{point.number}</span>
+          <h3 class="innovation-point-title">{point.title}</h3>
+          <p class="innovation-point-description">{point.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .innovation {
+    padding-block: var(--space-section-lg);
+    background-color: var(--color-bg);
+  }
+
+  .innovation-inner {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-gap-lg);
+  }
+
+  /* Header */
+  .innovation-label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+    letter-spacing: var(--label-tracking);
+    text-transform: var(--label-transform);
+    color: var(--color-accent-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .innovation-title {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    line-height: var(--h2-leading);
+    font-weight: var(--h2-weight);
+    letter-spacing: var(--h2-tracking);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .innovation-lead {
+    font-size: var(--lead-size);
+    line-height: var(--lead-leading);
+    color: var(--color-text-secondary);
+    max-width: 48ch;
+  }
+
+  /* Grid */
+  .innovation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-gap-md);
+  }
+
+  @media (min-width: 600px) {
+    .innovation-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 1024px) {
+    .innovation-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Point */
+  .innovation-point {
+    padding: var(--space-inset-md);
+    background-color: var(--color-surface-raised);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .innovation-number {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--p-weight-semi);
+    letter-spacing: var(--p-tracking-wider);
+    color: var(--color-accent);
+    margin-bottom: var(--space-stack-md);
+  }
+
+  .innovation-point-title {
+    font-family: var(--font-heading);
+    font-size: var(--h4-size);
+    line-height: var(--h4-leading);
+    font-weight: var(--h4-weight);
+    color: var(--color-text);
+    margin-bottom: var(--space-stack-sm);
+  }
+
+  .innovation-point-description {
+    font-size: var(--text-sm);
+    line-height: var(--p-leading-relaxed);
+    color: var(--color-text-secondary);
+  }
+</style>
