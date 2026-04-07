@@ -2,30 +2,32 @@
 import Button from './Button.astro';
 ---
 
-<section class="section hero" aria-labelledby="hero-title">
+<section class="section hero" aria-labelledby="hero__title">
   <div class="container hero__container">
-    <div class="hero-content">
-      <p class="hero-label">Bois naturel — Qualité constante</p>
-      <h1 class="hero-title" id="hero-title">Le bois<br />comme on l'aime.</h1>
-      <p class="hero-lead">
+
+    <div class="hero__block-content">
+      <p class="hero__label">Bois naturel — Qualité constante</p>
+      <h1 class="hero__title" id="hero__title">Le bois<br />comme on l'aime.</h1>
+      <p class="hero__lead">
         Neandertal sélectionne, prépare et livre des bois d'allumage,
         de grillage et de paillage issus de forêts gérées durablement.
         Rien de superflu. Tout ce qu'il faut.
       </p>
-      <div class="hero-actions">
+      <div class="hero__actions">
         <Button href="#allume-feu">Découvrir nos produits</Button>
         <Button href="#contact" variant="secondary">Nous contacter</Button>
       </div>
     </div>
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-image-placeholder">
-        <svg class="hero-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+    <div class="hero__block-visual" aria-hidden="true">
+      <div class="hero__image-placeholder">
+        <svg class="hero__icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M32 8 C20 16 12 28 16 40 C20 52 32 56 32 56 C32 56 44 52 48 40 C52 28 44 16 32 8Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
           <path d="M32 24 C26 30 24 36 26 42 C28 48 32 50 32 50 C32 50 36 48 38 42 C40 36 38 30 32 24Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
         </svg>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -49,8 +51,8 @@ import Button from './Button.astro';
     }
   }
 
-  /* Label */
-  .hero-label {
+  /* Block: content */
+  .hero__label {
     font-size: var(--label-size);
     font-weight: var(--label-weight);
     letter-spacing: var(--label-tracking);
@@ -59,8 +61,7 @@ import Button from './Button.astro';
     margin-bottom: var(--space-stack-md);
   }
 
-  /* Title */
-  .hero-title {
+  .hero__title {
     font-family: var(--font-heading);
     font-size: var(--h1-size);
     line-height: var(--h1-leading);
@@ -70,8 +71,7 @@ import Button from './Button.astro';
     margin-bottom: var(--space-stack-lg);
   }
 
-  /* Lead */
-  .hero-lead {
+  .hero__lead {
     font-size: var(--lead-size);
     line-height: var(--lead-leading);
     color: var(--lead-color);
@@ -79,23 +79,22 @@ import Button from './Button.astro';
     margin-bottom: var(--space-stack-lg);
   }
 
-  /* Actions */
-  .hero-actions {
+  .hero__actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-gap-sm);
   }
 
-  /* Visual */
-  .hero-visual {
+  /* Block: visual */
+  .hero__block-visual {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .hero-visual { display: flex; justify-content: flex-end; }
+    .hero__block-visual { display: flex; justify-content: flex-end; }
   }
 
-  .hero-image-placeholder {
+  .hero__image-placeholder {
     width: 100%;
     max-width: 28rem;
     aspect-ratio: 4 / 5;
@@ -108,7 +107,7 @@ import Button from './Button.astro';
     color: var(--color-text-tertiary);
   }
 
-  .hero-icon {
+  .hero__icon {
     width: 4rem;
     height: 4rem;
   }

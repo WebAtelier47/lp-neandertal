@@ -13,24 +13,24 @@ const links = [
 <footer class="footer">
   <div class="container footer__container">
 
-    <div class="footer-brand">
-      <a class="footer-logo" href="/">Neandertal</a>
-      <p class="footer-tagline">Le bois comme on l'aime.</p>
+    <div class="footer__block-brand">
+      <a class="footer__logo" href="/">Neandertal</a>
+      <p class="footer__tagline">Le bois comme on l'aime.</p>
     </div>
 
-    <nav class="footer-nav" aria-label="Navigation pied de page">
-      <ul class="footer-nav-list">
+    <nav class="footer__block-nav" aria-label="Navigation pied de page">
+      <ul class="footer__nav-list">
         {links.map(link => (
-          <li><a class="footer-nav-link" href={link.href}>{link.label}</a></li>
+          <li><a class="footer__nav-link" href={link.href}>{link.label}</a></li>
         ))}
       </ul>
     </nav>
 
   </div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom__container">
-      <p class="footer-copy">&copy; {year} Neandertal. Tous droits réservés.</p>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-container">
+      <p class="footer__copy">&copy; {year} Neandertal. Tous droits réservés.</p>
     </div>
   </div>
 </footer>
@@ -57,8 +57,8 @@ const links = [
     }
   }
 
-  /* Brand */
-  .footer-logo {
+  /* Block: brand */
+  .footer__logo {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: var(--p-weight-normal);
@@ -68,45 +68,45 @@ const links = [
     margin-bottom: var(--space-stack-sm);
   }
 
-  .footer-tagline {
+  .footer__tagline {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
   }
 
-  /* Nav */
-  .footer-nav-list {
+  /* Block: nav */
+  .footer__nav-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-stack-sm);
   }
 
   @media (min-width: 480px) {
-    .footer-nav-list {
+    .footer__nav-list {
       flex-direction: row;
       flex-wrap: wrap;
       gap: var(--space-inline-lg);
     }
   }
 
-  .footer-nav-link {
+  .footer__nav-link {
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     transition: var(--transition-colors);
   }
-  .footer-nav-link:hover {
+  .footer__nav-link:hover {
     color: var(--color-text);
   }
 
   /* Bottom bar */
-  .footer-bottom {
+  .footer__bottom {
     border-top: var(--border-subtle);
   }
 
-  .footer-bottom__container {
+  .footer__bottom-container {
     padding-block: var(--space-stack-md);
   }
 
-  .footer-copy {
+  .footer__copy {
     font-size: var(--caption-size);
     color: var(--color-text-tertiary);
     letter-spacing: var(--caption-tracking);

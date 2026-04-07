@@ -6,26 +6,26 @@ const values = [
 ];
 ---
 
-<section class="section about" id="nous-sommes" aria-labelledby="about-title">
+<section class="section about" id="nous-sommes" aria-labelledby="about__title">
   <div class="container about__container">
 
-    <div class="about-header">
-      <p class="about-label">Qui nous sommes</p>
-      <h2 class="about-title" id="about-title">
+    <div class="about__block-header">
+      <p class="about__label">Qui nous sommes</p>
+      <h2 class="about__title" id="about__title">
         Une conviction simple.<br />Le bois bien traité est un matériau noble.
       </h2>
-      <p class="about-lead">
+      <p class="about__lead">
         Neandertal est né du refus du bois banal. Nous travaillons directement
         avec des exploitants forestiers locaux pour vous offrir des produits
         dont la qualité est constante, traçable et sans compromis.
       </p>
     </div>
 
-    <div class="about-values">
+    <div class="about__block-values">
       {values.map(value => (
-        <div class="about-value">
-          <h3 class="about-value-title">{value.title}</h3>
-          <p class="about-value-description">{value.description}</p>
+        <div class="about__value">
+          <h3 class="about__value-title">{value.title}</h3>
+          <p class="about__value-description">{value.description}</p>
         </div>
       ))}
     </div>
@@ -52,8 +52,8 @@ const values = [
     }
   }
 
-  /* Header */
-  .about-label {
+  /* Block: header */
+  .about__label {
     font-size: var(--label-size);
     font-weight: var(--label-weight);
     letter-spacing: var(--label-tracking);
@@ -62,7 +62,7 @@ const values = [
     margin-bottom: var(--space-stack-md);
   }
 
-  .about-title {
+  .about__title {
     font-family: var(--font-heading);
     font-size: var(--h2-size);
     line-height: var(--h2-leading);
@@ -72,26 +72,26 @@ const values = [
     margin-bottom: var(--space-stack-md);
   }
 
-  .about-lead {
+  .about__lead {
     font-size: var(--lead-size);
     line-height: var(--lead-leading);
     color: var(--color-text-secondary);
     max-width: 44ch;
   }
 
-  /* Values */
-  .about-values {
+  /* Block: values */
+  .about__block-values {
     display: flex;
     flex-direction: column;
     gap: var(--space-gap-md);
   }
 
-  .about-value {
+  .about__value {
     padding-block: var(--space-stack-md);
     border-top: var(--border-subtle);
   }
 
-  .about-value-title {
+  .about__value-title {
     font-family: var(--font-heading);
     font-size: var(--h4-size);
     line-height: var(--h4-leading);
@@ -100,7 +100,7 @@ const values = [
     margin-bottom: var(--space-stack-xs);
   }
 
-  .about-value-description {
+  .about__value-description {
     font-size: var(--text-base);
     line-height: var(--p-leading-normal);
     color: var(--color-text-secondary);

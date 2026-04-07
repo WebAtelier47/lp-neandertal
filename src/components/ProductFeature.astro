@@ -20,23 +20,23 @@ const {
 } = Astro.props;
 ---
 
-<section class="section product" id={id} data-reversed={reversed} data-bg={bgVariant} aria-labelledby={`${id}-title`}>
+<section class="section product" id={id} data-reversed={reversed} data-bg={bgVariant} aria-labelledby={`${id}__title`}>
   <div class="container product__container">
 
-    <div class="product-visual" aria-hidden="true">
-      <div class="product-image-placeholder">
+    <div class="product__block-visual" aria-hidden="true">
+      <div class="product__image-placeholder">
         <slot name="icon" />
       </div>
     </div>
 
-    <div class="product-content">
-      <p class="product-label">{label}</p>
-      <h2 class="product-title" id={`${id}-title`}>{title}</h2>
-      <p class="product-description">{description}</p>
-      <ul class="product-details">
+    <div class="product__block-content">
+      <p class="product__label">{label}</p>
+      <h2 class="product__title" id={`${id}__title`}>{title}</h2>
+      <p class="product__description">{description}</p>
+      <ul class="product__details">
         {details.map(detail => (
-          <li class="product-detail">
-            <span class="product-detail-dot" aria-hidden="true"></span>
+          <li class="product__detail">
+            <span class="product__detail-dot" aria-hidden="true"></span>
             {detail}
           </li>
         ))}
@@ -61,16 +61,16 @@ const {
     .product__container {
       grid-template-columns: 1fr 1fr;
     }
-    .product[data-reversed="true"] .product-visual {
+    .product[data-reversed="true"] .product__block-visual {
       order: 2;
     }
-    .product[data-reversed="true"] .product-content {
+    .product[data-reversed="true"] .product__block-content {
       order: 1;
     }
   }
 
-  /* Visual */
-  .product-image-placeholder {
+  /* Block: visual */
+  .product__image-placeholder {
     aspect-ratio: 1;
     background-color: var(--color-bg-muted);
     border-radius: var(--radius-lg);
@@ -80,13 +80,13 @@ const {
     justify-content: center;
     color: var(--color-text-tertiary);
   }
-  .product[data-bg="subtle"] .product-image-placeholder,
-  .product[data-bg="muted"]  .product-image-placeholder {
+  .product[data-bg="subtle"] .product__image-placeholder,
+  .product[data-bg="muted"]  .product__image-placeholder {
     background-color: var(--color-surface);
   }
 
-  /* Content */
-  .product-label {
+  /* Block: content */
+  .product__label {
     font-size: var(--label-size);
     font-weight: var(--label-weight);
     letter-spacing: var(--label-tracking);
@@ -95,7 +95,7 @@ const {
     margin-bottom: var(--space-stack-md);
   }
 
-  .product-title {
+  .product__title {
     font-family: var(--font-heading);
     font-size: var(--h2-size);
     line-height: var(--h2-leading);
@@ -105,7 +105,7 @@ const {
     margin-bottom: var(--space-stack-md);
   }
 
-  .product-description {
+  .product__description {
     font-size: var(--lead-size);
     line-height: var(--lead-leading);
     color: var(--color-text-secondary);
@@ -113,14 +113,13 @@ const {
     max-width: 44ch;
   }
 
-  /* Details list */
-  .product-details {
+  .product__details {
     display: flex;
     flex-direction: column;
     gap: var(--space-stack-sm);
   }
 
-  .product-detail {
+  .product__detail {
     display: flex;
     align-items: baseline;
     gap: var(--space-inline-sm);
@@ -128,7 +127,7 @@ const {
     color: var(--color-text-secondary);
   }
 
-  .product-detail-dot {
+  .product__detail-dot {
     flex-shrink: 0;
     width: 6px;
     height: 6px;

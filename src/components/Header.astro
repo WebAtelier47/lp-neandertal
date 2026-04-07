@@ -10,27 +10,27 @@ const nav = [
 
 <header class="header" id="top">
   <div class="container header__container">
-    <a class="logo" href="/">Neandertal</a>
+    <a class="header__logo" href="/">Neandertal</a>
 
-    <nav class="nav" aria-label="Navigation principale">
-      <ul class="nav-list">
+    <nav class="header__nav" aria-label="Navigation principale">
+      <ul class="header__nav-list">
         {nav.map(item => (
-          <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+          <li><a class="header__nav-link" href={item.href}>{item.label}</a></li>
         ))}
       </ul>
     </nav>
 
-    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
+    <button class="header__toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
     </button>
   </div>
 
-  <nav class="nav-mobile" id="nav-mobile" aria-hidden="true">
-    <ul class="container nav-mobile-list">
+  <nav class="header__mobile" id="nav-mobile" aria-hidden="true">
+    <ul class="container header__mobile-list">
       {nav.map(item => (
-        <li><a class="nav-mobile-link" href={item.href}>{item.label}</a></li>
+        <li><a class="header__mobile-link" href={item.href}>{item.label}</a></li>
       ))}
     </ul>
   </nav>
@@ -55,7 +55,7 @@ const nav = [
   }
 
   /* Logo */
-  .logo {
+  .header__logo {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: var(--p-weight-normal);
@@ -65,32 +65,32 @@ const nav = [
   }
 
   /* Desktop nav */
-  .nav {
+  .header__nav {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .nav { display: block; }
+    .header__nav { display: block; }
   }
 
-  .nav-list {
+  .header__nav-list {
     display: flex;
     align-items: center;
     gap: var(--space-inline-lg);
   }
 
-  .nav-link {
+  .header__nav-link {
     font-size: var(--text-sm);
     font-weight: var(--p-weight-medium);
     color: var(--color-text-secondary);
     transition: var(--transition-colors);
   }
-  .nav-link:hover {
+  .header__nav-link:hover {
     color: var(--color-text);
   }
 
   /* Mobile toggle */
-  .nav-toggle {
+  .header__toggle {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -100,10 +100,10 @@ const nav = [
   }
 
   @media (min-width: 768px) {
-    .nav-toggle { display: none; }
+    .header__toggle { display: none; }
   }
 
-  .nav-toggle-bar {
+  .header__toggle-bar {
     display: block;
     width: 22px;
     height: 1.5px;
@@ -112,24 +112,24 @@ const nav = [
   }
 
   /* Mobile nav */
-  .nav-mobile {
+  .header__mobile {
     display: none;
     border-top: var(--border-subtle);
     background-color: var(--color-bg);
     padding-inline: var(--layout-gutter);
   }
-  .nav-mobile.is-open {
+  .header__mobile.is-open {
     display: block;
   }
 
-  .nav-mobile-list {
+  .header__mobile-list {
     padding-block: var(--space-stack-md);
     display: flex;
     flex-direction: column;
     gap: var(--space-stack-xs);
   }
 
-  .nav-mobile-link {
+  .header__mobile-link {
     display: block;
     padding-block: var(--space-stack-sm);
     font-size: var(--text-base);
@@ -137,13 +137,13 @@ const nav = [
     color: var(--color-text-secondary);
     transition: var(--transition-colors);
   }
-  .nav-mobile-link:hover {
+  .header__mobile-link:hover {
     color: var(--color-text);
   }
 </style>
 
 <script>
-  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement;
+  const toggle = document.querySelector('.header__toggle') as HTMLButtonElement;
   const mobileNav = document.getElementById('nav-mobile');
 
   toggle?.addEventListener('click', () => {

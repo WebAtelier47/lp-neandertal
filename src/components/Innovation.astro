@@ -23,26 +23,26 @@ const points = [
 ];
 ---
 
-<section class="section innovation" id="innovation" aria-labelledby="innovation-title">
+<section class="section innovation" id="innovation" aria-labelledby="innovation__title">
   <div class="container innovation__container">
 
-    <div class="innovation-header">
-      <p class="innovation-label">Notre approche</p>
-      <h2 class="innovation-title" id="innovation-title">
+    <div class="innovation__block-header">
+      <p class="innovation__label">Notre approche</p>
+      <h2 class="innovation__title" id="innovation__title">
         De la forêt à chez vous.<br />Sans détour.
       </h2>
-      <p class="innovation-lead">
+      <p class="innovation__lead">
         Nous repensons chaque étape du circuit du bois pour garantir
         une qualité que vous pouvez voir, sentir et ressentir.
       </p>
     </div>
 
-    <div class="innovation-grid">
+    <div class="innovation__block-grid">
       {points.map(point => (
-        <div class="innovation-point">
-          <span class="innovation-number" aria-hidden="true">{point.number}</span>
-          <h3 class="innovation-point-title">{point.title}</h3>
-          <p class="innovation-point-description">{point.description}</p>
+        <div class="innovation__card">
+          <span class="innovation__card-number" aria-hidden="true">{point.number}</span>
+          <h3 class="innovation__card-title">{point.title}</h3>
+          <p class="innovation__card-description">{point.description}</p>
         </div>
       ))}
     </div>
@@ -62,8 +62,8 @@ const points = [
     gap: var(--space-gap-lg);
   }
 
-  /* Header */
-  .innovation-label {
+  /* Block: header */
+  .innovation__label {
     font-size: var(--label-size);
     font-weight: var(--label-weight);
     letter-spacing: var(--label-tracking);
@@ -72,7 +72,7 @@ const points = [
     margin-bottom: var(--space-stack-md);
   }
 
-  .innovation-title {
+  .innovation__title {
     font-family: var(--font-heading);
     font-size: var(--h2-size);
     line-height: var(--h2-leading);
@@ -82,37 +82,37 @@ const points = [
     margin-bottom: var(--space-stack-md);
   }
 
-  .innovation-lead {
+  .innovation__lead {
     font-size: var(--lead-size);
     line-height: var(--lead-leading);
     color: var(--color-text-secondary);
     max-width: 48ch;
   }
 
-  /* Grid */
-  .innovation-grid {
+  /* Block: grid */
+  .innovation__block-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-md);
   }
 
   @media (min-width: 600px) {
-    .innovation-grid { grid-template-columns: 1fr 1fr; }
+    .innovation__block-grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (min-width: 1024px) {
-    .innovation-grid { grid-template-columns: repeat(4, 1fr); }
+    .innovation__block-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
-  /* Point */
-  .innovation-point {
+  /* Card elements */
+  .innovation__card {
     padding: var(--space-inset-md);
     background-color: var(--color-surface-raised);
     border: var(--border-subtle);
     border-radius: var(--radius-md);
   }
 
-  .innovation-number {
+  .innovation__card-number {
     display: block;
     font-size: var(--text-xs);
     font-weight: var(--p-weight-semi);
@@ -121,7 +121,7 @@ const points = [
     margin-bottom: var(--space-stack-md);
   }
 
-  .innovation-point-title {
+  .innovation__card-title {
     font-family: var(--font-heading);
     font-size: var(--h4-size);
     line-height: var(--h4-leading);
@@ -130,7 +130,7 @@ const points = [
     margin-bottom: var(--space-stack-sm);
   }
 
-  .innovation-point-description {
+  .innovation__card-description {
     font-size: var(--text-sm);
     line-height: var(--p-leading-relaxed);
     color: var(--color-text-secondary);
