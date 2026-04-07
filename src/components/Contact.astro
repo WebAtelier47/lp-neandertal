@@ -87,14 +87,14 @@ import Button from './Button.astro';
 
   .contact__container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-gap-lg);
     align-items: start;
   }
 
   @media (min-width: 768px) {
     .contact__container {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     }
   }
 
@@ -134,12 +134,12 @@ import Button from './Button.astro';
 
   .contact__form-row {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-stack-md);
   }
 
   @media (min-width: 480px) {
-    .contact__form-row { grid-template-columns: 1fr 1fr; }
+    .contact__form-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   }
 
   .contact__form-field {

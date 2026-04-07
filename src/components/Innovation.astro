@@ -92,16 +92,16 @@ const points = [
   /* Block: grid */
   .innovation__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-gap-md);
   }
 
   @media (min-width: 600px) {
-    .innovation__grid { grid-template-columns: 1fr 1fr; }
+    .innovation__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   }
 
   @media (min-width: 1024px) {
-    .innovation__grid { grid-template-columns: repeat(4, 1fr); }
+    .innovation__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 
   /* Card elements */

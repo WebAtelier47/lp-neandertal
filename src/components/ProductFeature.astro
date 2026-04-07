@@ -52,14 +52,14 @@ const {
 
   .product__container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-gap-lg);
     align-items: center;
   }
 
   @media (min-width: 768px) {
     .product__container {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     }
     .product[data-reversed="true"] .product__visual {
       order: 2;
