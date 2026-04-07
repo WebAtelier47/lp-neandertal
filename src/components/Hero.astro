@@ -32,6 +32,7 @@ import Button from './Button.astro';
 <style>
   .hero {
     padding-block: var(--space-section-lg);
+    padding-inline: var(--layout-gutter);
     background-color: var(--color-bg);
     overflow: hidden;
   }
@@ -39,7 +40,6 @@ import Button from './Button.astro';
   .hero-inner {
     max-width: var(--layout-max);
     margin-inline: auto;
-    padding-inline: var(--layout-gutter);
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-lg);

@@ -179,7 +179,7 @@
   --layout-max:     81.25rem;                            /* 1300px */
   --layout-content: 42rem;                               /*  672px */
   --layout-narrow:  32rem;                               /*  512px */
-  --layout-gutter:  clamp(1rem, 0.67rem + 1.63vw, 2rem);  /* 16 → 32px | 320→1300 */
+  --layout-gutter:  clamp(0.9375rem, 0.02rem + 4.59vw, 3.75rem);  /* 15 → 60px | 320→1300 */
 
   /* -----------------------------------------------------------------------
      SURFACES — Rayons
