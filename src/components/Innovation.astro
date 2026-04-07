@@ -23,8 +23,8 @@ const points = [
 ];
 ---
 
-<section class="innovation" id="innovation" aria-labelledby="innovation-title">
-  <div class="innovation-inner">
+<section class="section innovation" id="innovation" aria-labelledby="innovation-title">
+  <div class="container innovation__container">
 
     <div class="innovation-header">
       <p class="innovation-label">Notre approche</p>
@@ -53,13 +53,10 @@ const points = [
 <style>
   .innovation {
     padding-block: var(--space-section-lg);
-    padding-inline: var(--layout-gutter);
     background-color: var(--color-bg);
   }
 
-  .innovation-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .innovation__container {
     display: flex;
     flex-direction: column;
     gap: var(--space-gap-lg);

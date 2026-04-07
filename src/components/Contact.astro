@@ -2,8 +2,8 @@
 import Button from './Button.astro';
 ---
 
-<section class="contact" id="contact" aria-labelledby="contact-title">
-  <div class="contact-inner">
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container contact__container">
 
     <div class="contact-header">
       <p class="contact-label">Nous contacter</p>
@@ -82,13 +82,10 @@ import Button from './Button.astro';
 <style>
   .contact {
     padding-block: var(--space-section-lg);
-    padding-inline: var(--layout-gutter);
     background-color: var(--color-bg-subtle);
   }
 
-  .contact-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .contact__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-lg);
@@ -96,7 +93,7 @@ import Button from './Button.astro';
   }
 
   @media (min-width: 768px) {
-    .contact-inner {
+    .contact__container {
       grid-template-columns: 1fr 1fr;
     }
   }

@@ -9,7 +9,7 @@ const nav = [
 ---
 
 <header class="header" id="top">
-  <div class="header-inner">
+  <div class="container header__container">
     <a class="logo" href="/">Neandertal</a>
 
     <nav class="nav" aria-label="Navigation principale">
@@ -28,7 +28,7 @@ const nav = [
   </div>
 
   <nav class="nav-mobile" id="nav-mobile" aria-hidden="true">
-    <ul class="nav-mobile-list">
+    <ul class="container nav-mobile-list">
       {nav.map(item => (
         <li><a class="nav-mobile-link" href={item.href}>{item.label}</a></li>
       ))}
@@ -46,9 +46,7 @@ const nav = [
     padding-inline: var(--layout-gutter);
   }
 
-  .header-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .header__container {
     height: 4rem;
     display: flex;
     align-items: center;
@@ -125,8 +123,6 @@ const nav = [
   }
 
   .nav-mobile-list {
-    max-width: var(--layout-max);
-    margin-inline: auto;
     padding-block: var(--space-stack-md);
     display: flex;
     flex-direction: column;

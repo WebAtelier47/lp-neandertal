@@ -11,7 +11,7 @@ const links = [
 ---
 
 <footer class="footer">
-  <div class="footer-inner">
+  <div class="container footer__container">
 
     <div class="footer-brand">
       <a class="footer-logo" href="/">Neandertal</a>
@@ -29,7 +29,7 @@ const links = [
   </div>
 
   <div class="footer-bottom">
-    <div class="footer-bottom-inner">
+    <div class="container footer-bottom__container">
       <p class="footer-copy">&copy; {year} Neandertal. Tous droits réservés.</p>
     </div>
   </div>
@@ -42,9 +42,7 @@ const links = [
     padding-inline: var(--layout-gutter);
   }
 
-  .footer-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .footer__container {
     padding-block: var(--space-section);
     display: flex;
     flex-direction: column;
@@ -52,7 +50,7 @@ const links = [
   }
 
   @media (min-width: 640px) {
-    .footer-inner {
+    .footer__container {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
@@ -104,9 +102,7 @@ const links = [
     border-top: var(--border-subtle);
   }
 
-  .footer-bottom-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .footer-bottom__container {
     padding-block: var(--space-stack-md);
   }
 

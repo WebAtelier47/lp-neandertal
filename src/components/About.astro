@@ -6,8 +6,8 @@ const values = [
 ];
 ---
 
-<section class="about" id="nous-sommes" aria-labelledby="about-title">
-  <div class="about-inner">
+<section class="section about" id="nous-sommes" aria-labelledby="about-title">
+  <div class="container about__container">
 
     <div class="about-header">
       <p class="about-label">Qui nous sommes</p>
@@ -36,20 +36,17 @@ const values = [
 <style>
   .about {
     padding-block: var(--space-section-lg);
-    padding-inline: var(--layout-gutter);
     background-color: var(--color-bg-subtle);
   }
 
-  .about-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .about__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-lg);
   }
 
   @media (min-width: 768px) {
-    .about-inner {
+    .about__container {
       grid-template-columns: 1fr 1fr;
       align-items: start;
     }

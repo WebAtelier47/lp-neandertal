@@ -20,8 +20,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="product" id={id} data-reversed={reversed} data-bg={bgVariant} aria-labelledby={`${id}-title`}>
-  <div class="product-inner">
+<section class="section product" id={id} data-reversed={reversed} data-bg={bgVariant} aria-labelledby={`${id}-title`}>
+  <div class="container product__container">
 
     <div class="product-visual" aria-hidden="true">
       <div class="product-image-placeholder">
@@ -47,16 +47,10 @@ const {
 </section>
 
 <style>
-  .product {
-    padding-block: var(--space-section);
-    padding-inline: var(--layout-gutter);
-  }
   .product[data-bg="subtle"] { background-color: var(--color-bg-subtle); }
   .product[data-bg="muted"]  { background-color: var(--color-bg-muted); }
 
-  .product-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .product__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-lg);
@@ -64,7 +58,7 @@ const {
   }
 
   @media (min-width: 768px) {
-    .product-inner {
+    .product__container {
       grid-template-columns: 1fr 1fr;
     }
     .product[data-reversed="true"] .product-visual {

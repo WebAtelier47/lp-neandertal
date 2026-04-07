@@ -2,8 +2,8 @@
 import Button from './Button.astro';
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-inner">
+<section class="section hero" aria-labelledby="hero-title">
+  <div class="container hero__container">
     <div class="hero-content">
       <p class="hero-label">Bois naturel — Qualité constante</p>
       <h1 class="hero-title" id="hero-title">Le bois<br />comme on l'aime.</h1>
@@ -32,14 +32,11 @@ import Button from './Button.astro';
 <style>
   .hero {
     padding-block: var(--space-section-lg);
-    padding-inline: var(--layout-gutter);
     background-color: var(--color-bg);
     overflow: hidden;
   }
 
-  .hero-inner {
-    max-width: var(--layout-max);
-    margin-inline: auto;
+  .hero__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-lg);
@@ -47,7 +44,7 @@ import Button from './Button.astro';
   }
 
   @media (min-width: 768px) {
-    .hero-inner {
+    .hero__container {
       grid-template-columns: 1fr 1fr;
     }
   }
