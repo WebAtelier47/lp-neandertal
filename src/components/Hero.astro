@@ -5,7 +5,7 @@ import Button from './Button.astro';
 <section class="section hero" aria-labelledby="hero__title">
   <div class="container hero__container">
 
-    <div class="hero__block-content">
+    <div class="block hero__content">
       <p class="hero__label">Bois naturel — Qualité constante</p>
       <h1 class="hero__title" id="hero__title">Le bois<br />comme on l'aime.</h1>
       <p class="hero__lead">
@@ -19,7 +19,7 @@ import Button from './Button.astro';
       </div>
     </div>
 
-    <div class="hero__block-visual" aria-hidden="true">
+    <div class="block hero__visual" aria-hidden="true">
       <div class="hero__image-placeholder">
         <svg class="hero__icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M32 8 C20 16 12 28 16 40 C20 52 32 56 32 56 C32 56 44 52 48 40 C52 28 44 16 32 8Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -86,12 +86,12 @@ import Button from './Button.astro';
   }
 
   /* Block: visual */
-  .hero__block-visual {
+  .hero__visual {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .hero__block-visual { display: flex; justify-content: flex-end; }
+    .hero__visual { display: flex; justify-content: flex-end; }
   }
 
   .hero__image-placeholder {

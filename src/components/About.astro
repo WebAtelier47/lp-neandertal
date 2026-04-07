@@ -9,7 +9,7 @@ const values = [
 <section class="section about" id="nous-sommes" aria-labelledby="about__title">
   <div class="container about__container">
 
-    <div class="about__block-header">
+    <div class="block about__header">
       <p class="about__label">Qui nous sommes</p>
       <h2 class="about__title" id="about__title">
         Une conviction simple.<br />Le bois bien traité est un matériau noble.
@@ -21,7 +21,7 @@ const values = [
       </p>
     </div>
 
-    <div class="about__block-values">
+    <div class="block about__values">
       {values.map(value => (
         <div class="about__value">
           <h3 class="about__value-title">{value.title}</h3>
@@ -80,7 +80,7 @@ const values = [
   }
 
   /* Block: values */
-  .about__block-values {
+  .about__values {
     display: flex;
     flex-direction: column;
     gap: var(--space-gap-md);

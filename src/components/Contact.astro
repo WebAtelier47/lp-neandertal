@@ -5,7 +5,7 @@ import Button from './Button.astro';
 <section class="section contact" id="contact" aria-labelledby="contact__title">
   <div class="container contact__container">
 
-    <div class="contact__block-header">
+    <div class="block contact__header">
       <p class="contact__label">Nous contacter</p>
       <h2 class="contact__title" id="contact__title">Une question ?<br />On vous répond.</h2>
       <p class="contact__lead">
@@ -15,7 +15,7 @@ import Button from './Button.astro';
     </div>
 
     <form
-      class="contact__block-form"
+      class="block contact__form"
       action="https://formspree.io/f/YOUR_FORM_ID"
       method="POST"
       novalidate
@@ -126,7 +126,7 @@ import Button from './Button.astro';
   }
 
   /* Block: form */
-  .contact__block-form {
+  .contact__form {
     display: flex;
     flex-direction: column;
     gap: var(--space-stack-md);

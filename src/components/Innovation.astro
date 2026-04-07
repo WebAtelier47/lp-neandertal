@@ -26,7 +26,7 @@ const points = [
 <section class="section innovation" id="innovation" aria-labelledby="innovation__title">
   <div class="container innovation__container">
 
-    <div class="innovation__block-header">
+    <div class="block innovation__header">
       <p class="innovation__label">Notre approche</p>
       <h2 class="innovation__title" id="innovation__title">
         De la forêt à chez vous.<br />Sans détour.
@@ -37,7 +37,7 @@ const points = [
       </p>
     </div>
 
-    <div class="innovation__block-grid">
+    <div class="block innovation__grid">
       {points.map(point => (
         <div class="innovation__card">
           <span class="innovation__card-number" aria-hidden="true">{point.number}</span>
@@ -90,18 +90,18 @@ const points = [
   }
 
   /* Block: grid */
-  .innovation__block-grid {
+  .innovation__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-gap-md);
   }
 
   @media (min-width: 600px) {
-    .innovation__block-grid { grid-template-columns: 1fr 1fr; }
+    .innovation__grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (min-width: 1024px) {
-    .innovation__block-grid { grid-template-columns: repeat(4, 1fr); }
+    .innovation__grid { grid-template-columns: repeat(4, 1fr); }
   }
 
   /* Card elements */
