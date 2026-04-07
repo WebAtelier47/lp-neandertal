@@ -1,0 +1,238 @@
+/* ==========================================================================
+   SEMANTIC TOKENS
+   Alias porteurs d'intention. C'est la seule couche consommee
+   par les composants.
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     BORNES VIEWPORT — Reference pour toutes les valeurs fluides
+     Min : 400px (25rem)  |  Max : 1200px (75rem)
+     ----------------------------------------------------------------------- */
+  --fluid-min: 25;   /* rem, sans unite pour usage dans les commentaires */
+  --fluid-max: 75;   /* rem, sans unite pour usage dans les commentaires */
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Fonds
+     ----------------------------------------------------------------------- */
+  --color-bg:        var(--p-color-neutral-0);
+  --color-bg-subtle: var(--p-color-neutral-50);
+  --color-bg-muted:  var(--p-color-neutral-100);
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Surfaces (cards, panels)
+     ----------------------------------------------------------------------- */
+  --color-surface:        var(--p-color-neutral-0);
+  --color-surface-raised: var(--p-color-neutral-50);
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Texte
+     ----------------------------------------------------------------------- */
+  --color-text:           var(--p-color-neutral-900);
+  --color-text-secondary: var(--p-color-neutral-600);
+  --color-text-tertiary:  var(--p-color-neutral-400);
+  --color-text-inverse:   var(--p-color-neutral-0);
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Bordures
+     ----------------------------------------------------------------------- */
+  --color-border:        var(--p-color-neutral-200);
+  --color-border-subtle: var(--p-color-neutral-150);
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Accent
+     ----------------------------------------------------------------------- */
+  --color-accent:        var(--p-color-accent-500);
+  --color-accent-hover:  var(--p-color-accent-600);
+  --color-accent-subtle: var(--p-color-accent-300);
+  --color-accent-text:   var(--p-color-accent-700);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Echelle fluide
+     Formule : clamp(min, interpolation lineaire 400→1200px, max)
+     ----------------------------------------------------------------------- */
+  --text-xs:   var(--p-font-size-13);
+  --text-sm:   var(--p-font-size-14);
+  --text-base: var(--p-font-size-16);
+  --text-md:   clamp(1rem,      0.95rem  + 0.25vw, 1.125rem);  /* 16 → 18 */
+  --text-lg:   clamp(1.125rem,  1rem     + 0.5vw,  1.25rem);   /* 18 → 20 */
+  --text-xl:   clamp(1.25rem,   1.05rem  + 1vw,    1.5rem);    /* 20 → 24 */
+  --text-2xl:  clamp(1.5rem,    1.1rem   + 2vw,    2rem);      /* 24 → 32 */
+  --text-3xl:  clamp(2rem,      1.4rem   + 3vw,    2.5rem);    /* 32 → 40 */
+  --text-4xl:  clamp(2.5rem,    1.5rem   + 4vw,    3rem);      /* 40 → 48 */
+  --text-5xl:  clamp(2.75rem,   1.25rem  + 6vw,    4rem);      /* 44 → 64 */
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Familles semantiques
+     ----------------------------------------------------------------------- */
+  --font-body:    var(--p-font-sans);
+  --font-heading: var(--p-font-serif);
+  --font-mono:    var(--p-font-mono);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Body
+     ----------------------------------------------------------------------- */
+  --body-size:    var(--text-base);
+  --body-leading: var(--p-leading-relaxed);
+  --body-weight:  var(--p-weight-normal);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Lead (intro)
+     ----------------------------------------------------------------------- */
+  --lead-size:    var(--text-lg);
+  --lead-leading: var(--p-leading-normal);
+  --lead-weight:  var(--p-weight-normal);
+  --lead-color:   var(--color-text-secondary);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Small
+     ----------------------------------------------------------------------- */
+  --small-size:    var(--text-sm);
+  --small-leading: var(--p-leading-normal);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Caption
+     ----------------------------------------------------------------------- */
+  --caption-size:     var(--text-xs);
+  --caption-leading:  var(--p-leading-normal);
+  --caption-color:    var(--color-text-tertiary);
+  --caption-tracking: var(--p-tracking-wide);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Label
+     ----------------------------------------------------------------------- */
+  --label-size:      var(--text-sm);
+  --label-weight:    var(--p-weight-medium);
+  --label-tracking:  var(--p-tracking-wide);
+  --label-transform: uppercase;
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Button
+     ----------------------------------------------------------------------- */
+  --button-size:     var(--text-sm);
+  --button-weight:   var(--p-weight-semi);
+  --button-tracking: var(--p-tracking-wide);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Roles : Headings
+     ----------------------------------------------------------------------- */
+  --h1-size:     var(--text-5xl);
+  --h1-leading:  var(--p-leading-tight);
+  --h1-weight:   var(--p-weight-normal);
+  --h1-tracking: var(--p-tracking-tight);
+
+  --h2-size:     var(--text-4xl);
+  --h2-leading:  var(--p-leading-tight);
+  --h2-weight:   var(--p-weight-normal);
+  --h2-tracking: var(--p-tracking-tight);
+
+  --h3-size:     var(--text-2xl);
+  --h3-leading:  var(--p-leading-snug);
+  --h3-weight:   var(--p-weight-medium);
+  --h3-tracking: var(--p-tracking-normal);
+
+  --h4-size:     var(--text-xl);
+  --h4-leading:  var(--p-leading-snug);
+  --h4-weight:   var(--p-weight-semi);
+  --h4-tracking: var(--p-tracking-normal);
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Inline (horizontal)
+     ----------------------------------------------------------------------- */
+  --space-inline-xs: var(--p-space-2);   /*  8px */
+  --space-inline-sm: var(--p-space-3);   /* 12px */
+  --space-inline-md: var(--p-space-4);   /* 16px */
+  --space-inline-lg: var(--p-space-6);   /* 24px */
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Stack (vertical entre elements)
+     ----------------------------------------------------------------------- */
+  --space-stack-xs: var(--p-space-1);   /*  4px */
+  --space-stack-sm: var(--p-space-2);   /*  8px */
+  --space-stack-md: var(--p-space-4);   /* 16px */
+  --space-stack-lg: var(--p-space-6);   /* 24px */
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Inset (padding interne cards/panels)
+     ----------------------------------------------------------------------- */
+  --space-inset-sm: var(--p-space-4);   /* 16px */
+  --space-inset-md: var(--p-space-6);   /* 24px */
+  --space-inset-lg: var(--p-space-8);   /* 32px */
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Section (fluides, padding vertical)
+     ----------------------------------------------------------------------- */
+  --space-section:    clamp(3rem,   2rem   + 4vw, 6rem);   /* 48 → 96px */
+  --space-section-lg: clamp(4rem,   2.5rem + 6vw, 8rem);   /* 64 → 128px */
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Gaps (grilles et groupes)
+     ----------------------------------------------------------------------- */
+  --space-gap-sm: var(--p-space-4);                           /* 16px statique */
+  --space-gap-md: clamp(1.5rem, 1rem    + 2vw, 2.5rem);     /* 24 → 40px */
+  --space-gap-lg: clamp(2rem,   1.25rem + 3vw, 3rem);        /* 32 → 48px */
+
+  /* -----------------------------------------------------------------------
+     LAYOUT
+     ----------------------------------------------------------------------- */
+  --layout-max:     75rem;                               /* 1200px */
+  --layout-content: 42rem;                               /*  672px */
+  --layout-narrow:  32rem;                               /*  512px */
+  --layout-gutter:  clamp(1rem, 0.5rem + 2vw, 2rem);    /* 16 → 32px */
+
+  /* -----------------------------------------------------------------------
+     SURFACES — Rayons
+     ----------------------------------------------------------------------- */
+  --radius-sm:   var(--p-radius-sm);
+  --radius-md:   var(--p-radius-md);
+  --radius-lg:   var(--p-radius-lg);
+  --radius-xl:   var(--p-radius-xl);
+  --radius-full: var(--p-radius-full);
+
+  /* -----------------------------------------------------------------------
+     SURFACES — Ombres
+     ----------------------------------------------------------------------- */
+  --shadow-xs: var(--p-shadow-xs);
+  --shadow-sm: var(--p-shadow-sm);
+  --shadow-md: var(--p-shadow-md);
+  --shadow-lg: var(--p-shadow-lg);
+  --shadow-xl: var(--p-shadow-xl);
+
+  /* -----------------------------------------------------------------------
+     SURFACES — Bordures
+     ----------------------------------------------------------------------- */
+  --border-width:   1px;
+  --border-default: var(--border-width) solid var(--color-border);
+  --border-subtle:  var(--border-width) solid var(--color-border-subtle);
+
+  /* -----------------------------------------------------------------------
+     TRANSITIONS
+     ----------------------------------------------------------------------- */
+  --duration-fast:   var(--p-duration-fast);
+  --duration-normal: var(--p-duration-normal);
+  --duration-slow:   var(--p-duration-slow);
+
+  --ease-default: var(--p-ease-default);
+  --ease-out:     var(--p-ease-out);
+  --ease-in-out:  var(--p-ease-in-out);
+
+  --transition-colors:
+    color var(--duration-normal) var(--ease-default),
+    background-color var(--duration-normal) var(--ease-default),
+    border-color var(--duration-normal) var(--ease-default);
+  --transition-shadow:
+    box-shadow var(--duration-normal) var(--ease-out);
+  --transition-transform:
+    transform var(--duration-normal) var(--ease-out);
+
+  /* -----------------------------------------------------------------------
+     Z-INDEX
+     ----------------------------------------------------------------------- */
+  --z-base:     var(--p-z-base);
+  --z-raised:   var(--p-z-raised);
+  --z-dropdown: var(--p-z-dropdown);
+  --z-sticky:   var(--p-z-sticky);
+  --z-overlay:  var(--p-z-overlay);
+  --z-modal:    var(--p-z-modal);
+  --z-toast:    var(--p-z-toast);
+}

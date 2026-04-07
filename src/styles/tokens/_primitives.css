@@ -1,0 +1,145 @@
+/* ==========================================================================
+   PRIMITIVE TOKENS
+   Valeurs brutes du design system. Ne jamais utiliser directement
+   dans les composants — passer par les tokens semantiques.
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     COULEURS — Neutres chauds (warm gray)
+     ----------------------------------------------------------------------- */
+  --p-color-neutral-0:   #ffffff;
+  --p-color-neutral-50:  #fafaf9;
+  --p-color-neutral-100: #f5f4f2;
+  --p-color-neutral-150: #eeedeb;
+  --p-color-neutral-200: #e2e0dd;
+  --p-color-neutral-300: #c8c5c0;
+  --p-color-neutral-400: #a8a49e;
+  --p-color-neutral-500: #878279;
+  --p-color-neutral-600: #6b665e;
+  --p-color-neutral-700: #514d47;
+  --p-color-neutral-800: #38352f;
+  --p-color-neutral-900: #1f1d19;
+  --p-color-neutral-950: #121110;
+
+  /* -----------------------------------------------------------------------
+     COULEURS — Accent (teal chaud mute)
+     ----------------------------------------------------------------------- */
+  --p-color-accent-300: #7ec4b8;
+  --p-color-accent-400: #4ea899;
+  --p-color-accent-500: #2e8e7e;
+  --p-color-accent-600: #1f7567;
+  --p-color-accent-700: #165a50;
+
+  /* -----------------------------------------------------------------------
+     ESPACEMENTS — Echelle base 4px (numero = px / 4)
+     ----------------------------------------------------------------------- */
+  --p-space-0:   0;
+  --p-space-1:   0.25rem;  /*  4px */
+  --p-space-2:   0.5rem;   /*  8px */
+  --p-space-3:   0.75rem;  /* 12px */
+  --p-space-4:   1rem;     /* 16px */
+  --p-space-5:   1.25rem;  /* 20px */
+  --p-space-6:   1.5rem;   /* 24px */
+  --p-space-8:   2rem;     /* 32px */
+  --p-space-10:  2.5rem;   /* 40px */
+  --p-space-12:  3rem;     /* 48px */
+  --p-space-16:  4rem;     /* 64px */
+  --p-space-20:  5rem;     /* 80px */
+  --p-space-24:  6rem;     /* 96px */
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Familles (fontes a definir, fallback systeme)
+     ----------------------------------------------------------------------- */
+  --p-font-sans:  system-ui, -apple-system, sans-serif;
+  --p-font-serif: Georgia, serif;
+  --p-font-mono:  ui-monospace, monospace;
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Graisses
+     ----------------------------------------------------------------------- */
+  --p-weight-normal: 400;
+  --p-weight-medium: 500;
+  --p-weight-semi:   600;
+  --p-weight-bold:   700;
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Tailles brutes (en rem)
+     ----------------------------------------------------------------------- */
+  --p-font-size-13: 0.8125rem;
+  --p-font-size-14: 0.875rem;
+  --p-font-size-16: 1rem;
+  --p-font-size-18: 1.125rem;
+  --p-font-size-20: 1.25rem;
+  --p-font-size-24: 1.5rem;
+  --p-font-size-32: 2rem;
+  --p-font-size-40: 2.5rem;
+  --p-font-size-48: 3rem;
+  --p-font-size-64: 4rem;
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Interlignes
+     ----------------------------------------------------------------------- */
+  --p-leading-none:    1;
+  --p-leading-tight:   1.2;
+  --p-leading-snug:    1.3;
+  --p-leading-normal:  1.5;
+  --p-leading-relaxed: 1.6;
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHIE — Approches (letter-spacing)
+     ----------------------------------------------------------------------- */
+  --p-tracking-tight:  -0.02em;
+  --p-tracking-normal:  0;
+  --p-tracking-wide:    0.02em;
+  --p-tracking-wider:   0.06em;
+
+  /* -----------------------------------------------------------------------
+     RAYONS (border-radius)
+     ----------------------------------------------------------------------- */
+  --p-radius-sm:   0.25rem;  /*  4px */
+  --p-radius-md:   0.5rem;   /*  8px */
+  --p-radius-lg:   0.75rem;  /* 12px */
+  --p-radius-xl:   1rem;     /* 16px */
+  --p-radius-full: 9999px;
+
+  /* -----------------------------------------------------------------------
+     OMBRES — Chaudes, subtiles (teintees neutral-900)
+     ----------------------------------------------------------------------- */
+  --p-shadow-xs:
+    0 1px 2px 0 rgba(31, 29, 25, 0.04);
+  --p-shadow-sm:
+    0 1px 3px 0 rgba(31, 29, 25, 0.06),
+    0 1px 2px -1px rgba(31, 29, 25, 0.04);
+  --p-shadow-md:
+    0 4px 6px -1px rgba(31, 29, 25, 0.06),
+    0 2px 4px -2px rgba(31, 29, 25, 0.04);
+  --p-shadow-lg:
+    0 10px 15px -3px rgba(31, 29, 25, 0.06),
+    0 4px 6px -4px rgba(31, 29, 25, 0.04);
+  --p-shadow-xl:
+    0 20px 25px -5px rgba(31, 29, 25, 0.08),
+    0 8px 10px -6px rgba(31, 29, 25, 0.04);
+
+  /* -----------------------------------------------------------------------
+     TRANSITIONS — Durees et courbes
+     ----------------------------------------------------------------------- */
+  --p-duration-fast:   120ms;
+  --p-duration-normal: 200ms;
+  --p-duration-slow:   350ms;
+
+  --p-ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --p-ease-out:     cubic-bezier(0, 0, 0.25, 1);
+  --p-ease-in-out:  cubic-bezier(0.42, 0, 0.58, 1);
+
+  /* -----------------------------------------------------------------------
+     Z-INDEX
+     ----------------------------------------------------------------------- */
+  --p-z-base:     0;
+  --p-z-raised:   10;
+  --p-z-dropdown: 100;
+  --p-z-sticky:   200;
+  --p-z-overlay:  300;
+  --p-z-modal:    400;
+  --p-z-toast:    500;
+}
